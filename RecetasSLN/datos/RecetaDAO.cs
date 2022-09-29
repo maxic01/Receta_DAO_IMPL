@@ -29,6 +29,7 @@ namespace RecetasSLN.datos
             SqlTransaction t = null;
             try
             {
+                comando.Parameters.Clear();
                 conectar();
                 t = conexion.BeginTransaction();
                 comando.Transaction = t;
@@ -72,12 +73,13 @@ namespace RecetasSLN.datos
             return ok;
         }
 
-        public DataTable listarIngredientes(string SP)
+        public DataTable listarIngredientes()
         {
+            comando.Parameters.Clear();
             conectar();
-            comando.CommandText = SP;
+            comando.CommandText = "SP_CONSULTAR_INGREDIENTES";
             DataTable tabla = new DataTable();
-            tabla.Load(comando.ExecuteReader());
+            tabla.Load(comando.ExecuteReader());           
             desconectar();
             return tabla;
         }

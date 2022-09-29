@@ -12,7 +12,7 @@ namespace RecetasSLN.datos
     {
         public DataTable GetIngredientes()
         {
-            return RecetaDAO.ObtenerInstancia().listarIngredientes("SP_CONSULTAR_INGREDIENTES");
+            return RecetaDAO.ObtenerInstancia().listarIngredientes();
         }
 
         public int GetproximaReceta()

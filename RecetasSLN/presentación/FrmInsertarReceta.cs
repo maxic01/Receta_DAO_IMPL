@@ -24,7 +24,7 @@ namespace RecetasSLN.presentación
             InitializeComponent();
             nueva = new Receta();
             servicio = new ImplementacionServicioF().crearServicio();
-            ultimaReceta();
+            
         }
 
         private void ultimaReceta()
@@ -34,6 +34,7 @@ namespace RecetasSLN.presentación
 
         private void FrmInsertarReceta_Load(object sender, EventArgs e)
         {
+            ultimaReceta();
             cargarCombo();
             limpiar();
         }
